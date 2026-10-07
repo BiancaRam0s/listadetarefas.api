@@ -1,19 +1,27 @@
-//caminho pacote
 package br.com.curso.listadetarefas.api.tarefa;
 
-//imports bibliotecas
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-//annotacions das springs
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "tb_tarefas")
-
 public class Tarefa {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String descricao;
-    private boolean concluida;    
+
+    private boolean concluida;
 }
+
